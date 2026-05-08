@@ -1,0 +1,65 @@
+// your code goes here
+// the longest cute substring
+
+const fs = require('fs');
+
+function cuteSubstring(index, string=[]) {
+    const input = fs.readFileSync(0, 'utf8').split(/\s+/);
+    let longestString = 0;
+    if(index % 2) {
+        for(let i=0; i<index.length; i++){
+            if (string[i]%2 == u||o){
+                longestString = longestString+string[i]
+            } else if (string[i]%3 == w){
+                longestString = longestString+string[i]
+            }
+        }
+    }
+}
+
+// const fs = require('fs');
+
+// function solve() {
+//     // Membaca semua input dari standard input (stdin)
+//     const input = fs.readFileSync(0, 'utf8').split(/\s+/);
+//     let currentLine = 0;
+
+//     // T adalah jumlah test case
+//     const T = parseInt(input[currentLine++]);
+
+//     for (let t = 0; t < T; t++) {
+//         // Membaca panjang string (N) dan stringnya sendiri (S)
+//         const N = parseInt(input[currentLine++]);
+//         const S = input[currentLine++];
+
+//         let maxLength = 0;
+
+//         for (let i = 0; i < N; i++) {
+//             // Sebuah substring 'cute' harus dimulai dengan 'u' atau 'o'
+//             if (S[i] === 'u' || S[i] === 'o') {
+//                 let currentLen = 1;
+                
+//                 // Cek pasangan 'w' + ('u' atau 'o') berikutnya
+//                 // Karakter ke-2 harus 'w', karakter ke-3 harus 'u/o', dst.
+//                 while (i + currentLen + 1 < N) {
+//                     let charGenap = S[i + currentLen];     // Posisi genap dalam substring
+//                     let charGanjil = S[i + currentLen + 1]; // Posisi ganjil dalam substring
+
+//                     if (charGenap === 'w' && (charGanjil === 'u' || charGanjil === 'o')) {
+//                         currentLen += 2;
+//                     } else {
+//                         break;
+//                     }
+//                 }
+                
+//                 if (currentLen > maxLength) {
+//                     maxLength = currentLen;
+//                 }
+//             }
+//         }
+//         // Output hasil per baris sesuai permintaan soal
+//         console.log(maxLength);
+//     }
+// }
+
+// solve();
