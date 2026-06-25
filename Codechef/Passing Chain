@@ -1,0 +1,33 @@
+// your code goes here
+
+const fs = require('fs');
+
+// Input N, K
+function solve() {
+    // Read all input from standard input
+    const input = fs.readFileSync('/dev/stdin', 'utf-8').trim().split(/\s+/);
+    if (input.length === 0 || input[0] === '') return;
+
+    let pointer = 0;
+    const T = parseInt(input[pointer++], 10);
+
+    for (let i = 0; i < T; i++) {
+        const N = parseInt(input[pointer++], 10);
+        const K = parseInt(input[pointer++], 10);
+
+        console.log(passingChain(N, K));
+    }
+}
+
+function passingChain(N, K) {
+    let currentHolder = 1;
+
+    // Keep passing the ball as long as the next player is within bounds
+    while (currentHolder + K <= N) {
+        currentHolder += K;
+    }
+
+    return currentHolder;
+}
+
+solve();
